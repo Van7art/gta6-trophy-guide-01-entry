@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Dashboard — GTA VI · 55 trophies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="dash">
+  <div class="ring-wrap">
+    <svg class="ring" width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="#22303f" stroke-width="10"/>
+      <circle id="ringFill" cx="60" cy="60" r="52" fill="none" stroke="#ffb400" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
+    </svg>
+    <div class="ring-label"><strong id="earnedCount">0</strong><span>/55</span></div>
+  </div>
+  <div>
+    <p class="kicker">GTA VI · PS5 · TROPHY DASHBOARD</p>
+    <h1>Leonida Trophy Dashboard</h1>
+    <p class="sub">All 55 trophies with their official names, descriptions and grades, a cited guide for each, a roadmap to the platinum, and a tracker that saves in your browser.</p>
+    <p class="stats"><span>◆ 1 Platinum</span><span>◆ 2 Gold</span><span>◆ 6 Silver</span><span>◆ 46 Bronze</span><span>◆ 28 hidden</span><span>◆ 0 online</span></p>
+    <p id="progressText" class="progress-text"></p>
+  </div>
+</header>
+<div class="controls">
+  <input id="search" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+  <select id="kind" aria-label="Filter by kind">
+    <option value="all">All</option><option value="story">Story</option><option value="missable">Missable</option>
+    <option value="collectibles">Collectibles</option><option value="activities">Activities</option><option value="online">Online</option>
+  </select>
+  <select id="gradeFilter" aria-label="Filter by grade">
+    <option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option>
+    <option value="silver">Silver</option><option value="bronze">Bronze</option>
+  </select>
+  <label><input id="spoilers" type="checkbox"> Hide story spoilers</label>
+  <button id="exportBtn" type="button">Export</button>
+  <label class="import">Import <input id="importFile" type="file" accept="application/json"></label>
+</div>
+<main class="layout">
+  <div class="left">
+    <div id="emptyOnline" class="empty" hidden>There are no online trophies — all 55 are single-player and offline.</div>
+    <section id="list" class="rows" aria-label="Trophy checklist"></section>
+    <section id="roadmap" class="roadmap">
+      <h2>Roadmap to the platinum</h2>
+      <p class="roadmap-note">Five stages, about 200 hours. One playthrough is enough — there is no mission replay, so keep a manual save at the start of every chapter.</p>
+      <ol id="roadmapList" class="stages"></ol>
+      <p class="missable-callout">⚠ One trophy can be missed: <strong>Positive Mental Attitude</strong> — meditate with Lucia on the balcony in Chapter 1, the morning after “Down to Earth”. <a href="#missable">Show missable trophies</a></p>
+    </section>
+  </div>
+  <aside id="detail" class="panel" aria-label="Trophy guide"></aside>
+</main>
+<footer><p>Official names, descriptions and grades as PlayStation publishes them. Guides in our own words, with sources beside each trophy. Sources: PowerPyx, PSNProfiles, Exophase, GTA Zone, KeenGamer, Output Lag. Works fully offline; no Rockstar artwork.</p></footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
